@@ -36,4 +36,10 @@ jobs:
       - name: Build
         run: npm run build:prod
 
-      
+      - name: Deploy to GitHub Pages
+       uses: anjaligh.github.io/BuildTest2@v3
+       with:
+         target_branch: gh-pages
+         build_dir: dist/angulartest-app
+       env:
+         GITHUB_TOKEN: ${{ secrets.TOKEN }}
